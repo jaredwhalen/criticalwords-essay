@@ -1,0 +1,240 @@
+@import './values';
+
+#stepper__text {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  z-index: 1000;
+  position: fixed;
+  pointer-events: none;
+  width: 100vw;
+  margin: 0 auto;
+
+  .slide {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.15s;
+    @include mobile {
+      padding: 0 25px;
+      padding-bottom: 70px;
+    }
+
+    &.active {
+      opacity: 1;
+
+      span {
+        pointer-events: all;
+      }
+
+      &.interactive {
+        pointer-events: all;
+      }
+    }
+
+    p {
+      max-width: 50rem;
+      // margin: 1rem auto;
+      // padding: 0.5rem 1rem;
+      font-weight: 400;
+      line-height: 1.7;
+      font-size: 20px;
+      @include mobile {
+        font-size: 14px;
+      }
+
+      span.p-inner {
+        background-color: $text_main;
+        -webkit-box-shadow: -6px 0 0 0 $text_main, 6px 0 0 0 $text_main;
+        box-shadow: -6px 0 0 0 $text_main, 6px 0 0 0 $text_main;
+        padding: 1.5px 0;
+        // line-height: 1.75;
+        mark {
+          background-color: $TRAVIS;
+          -webkit-box-shadow: -6px 0 0 0 $text_main, 6px 0 0 0 $text_main;
+          box-shadow: -6px 0 0 0 $text_main, 6px 0 0 0 $text_main;
+          padding: 1.5px 5px;
+
+          // white-space: nowrap;
+          &.MATT {
+            background-color: rgba(#b6b5b6, 1);
+            color: $background;
+          }
+
+          &.spoiler {
+            background-color: #222;
+            color: #222;
+            transition: all 0.15s;
+            padding: 1.5px 0;
+
+            &:hover, &:active {
+              background-color: inherit;
+              color: inherit;
+            }
+          }
+
+          &.instructions-desktop,
+          &.instructions-mobile {
+            background-color: inherit;
+            color: inherit;
+            padding: 1.5px 0;
+
+
+            .keyboard {
+              display: inline-block;
+              width: 1em;
+              height: 0.9em;
+              border: 1px solid #4a3d3e;
+              border-radius: 5px;
+              border-top: 0.5px solid #b2a1a3;
+              border-left: 1px solid #826b6d;
+              border-right: 1px solid #826b6d;
+              border-bottom: 3px solid #4a3d3e;
+              line-height: 0.8;
+              vertical-align: middle;
+              text-align: center;
+              -webkit-transform: translateY(-5.5%);
+              -ms-transform: translateY(-5.5%);
+              transform: translateY(-5.5%);
+
+              &.keyboard:last-child {
+                background-color: $TRAVIS;
+                margin-left: 0.25em;
+              }
+            }
+          }
+
+          &.instructions-desktop {
+            @include mobile {
+              display: none;
+            }
+          }
+
+          &.instructions-mobile {
+            display: none;
+            @include mobile {
+              display: inline-block;
+            }
+          }
+
+          &.tippy,
+          &.tippy-example {
+            background-color: $TALIESIN;
+            // background-color: $LAURA;
+            // background-color: inherit;
+            // color: inherit;
+            // padding: 1.5px 0;
+            //
+            // &::after {
+            //   font-family: "Font Awesome 5 Free";
+            //   font-weight: 100;
+            //   content: "\f059";
+            //   font-size: 14px;
+            //   padding-left: 2.5px;
+            // }
+          }
+        }
+      }
+    }
+
+    &.methodology,
+    &.title {
+      p {
+        span.p-inner {
+          background-color: transparent !important;
+          -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+          padding: none !important;
+
+          a {
+            color: $MARISHA;
+          }
+        }
+      }
+    }
+
+    &.methodology {
+      p {
+        max-width: 30rem;
+        color: $text_main;
+        font-weight: 300;
+        line-height: normal;
+        font-size: 16px;
+      }
+    }
+
+    &.title {
+      text-align: center;
+
+      p {
+        max-width: 40rem;
+        color: $text_main;
+        font-weight: 300;
+        line-height: normal;
+        font-size: 16px;
+
+        span.p-inner {
+          svg {
+            margin-bottom: 15px;
+            @include tablet {
+              width: 70vw;
+              margin: 0 auto;
+            }
+          }
+
+          strong {
+            margin: 15px 0;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 400;
+          }
+
+          mark {
+            background-color: $MARISHA;
+            color: rgba($background, 1);
+          }
+
+          * {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: '\f0d7';
+  font-family: FontAwesome;
+  display: inline-block;
+  padding-right: 5px;
+  position: absolute;
+  right: 0;
+  pointer-events: none;
+}
+
+.dummy {
+  position: absolute;
+  left: -10000px;
+  font-size: 20px;
+  opacity: 0;
+}
+
+#episodes {
+  display: inline;
+  // A reset of styles, including removing the default dropdown arrow
+  appearance: none;
+  // Additional resets for further consistency
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+  // font-weight: 600;
+  font-style: italic;
+}

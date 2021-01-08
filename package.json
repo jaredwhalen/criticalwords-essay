@@ -1,0 +1,51 @@
+{
+  "name": "criticalwords-essay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.17.5",
+    "browserify": "^13.1.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-data": "^1.2.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.1",
+    "gulp-ignore": "^2.0.1",
+    "gulp-inline": "^0.1.2",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-nunjucks-render": "^2.0.0",
+    "gulp-remove-code": "^1.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-useref": "^3.1.2",
+    "gulp-util": "^3.0.7",
+    "run-sequence": "^1.2.2",
+    "stringify": "^5.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "inquirer": "^3.2.3",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security",
+    "gutil": "^1.6.4",
+    "vinyl-ftp": "^0.6.1"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babelify": "^8.0.0",
+    "d3": "^5.15.1",
+    "d3-chord": "^2.0.0",
+    "gootenberg": "^1.4.2",
+    "intersection-observer": "^0.10.0",
+    "nunjucks": "^3.0.1",
+    "scrollama": "^2.2.0"
+  }
+}

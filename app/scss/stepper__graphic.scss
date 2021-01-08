@@ -1,0 +1,174 @@
+@import './values';
+
+div {
+  &.SAM {
+    color: rgba($SAM, 0.75);
+  }
+
+  &.ASHLEY {
+    color: rgba($ASHLEY, 0.75);
+  }
+
+  &.TRAVIS {
+    color: rgba($TRAVIS, 0.75);
+  }
+
+  &.LAURA {
+    color: rgba($LAURA, 0.75);
+  }
+
+  &.MARISHA {
+    color: rgba($MARISHA, 0.75);
+  }
+
+  &.LIAM {
+    color: rgba($LIAM, 0.75);
+  }
+
+  &.TALIESIN {
+    color: rgba($TALIESIN, 0.75);
+  }
+
+  &.MATT {
+    color: rgba($MATT, 0.75);
+  }
+}
+
+#stepper__graphic {
+  // pointer-events: none;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+
+  .graphic {
+    position: absolute;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform-origin: top center;
+    transition: opacity 0.15s;
+
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  #stepper__graphic-inner {
+    padding: 15px;
+    font-size: 11px;
+    font-weight: bold;
+    color: rgba(155, 133, 135, 0.33);
+    // transform: scale(0.5);
+  }
+}
+
+.axisLabels {
+  font-size: 12px;
+  text-anchor: start;
+  color: #efeae1;
+
+  line {
+    stroke: rgba(#efeae1, 0.5);
+  }
+}
+
+.flex-legend {
+  display: flex;
+  justify-content: space-between;
+
+  .flex-legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    .flex-legend-item-square {
+      width: 10px;
+      height: 10px;
+      color: inherit;
+      background-color: currentColor;
+      margin-right: 5px;
+    }
+  }
+}
+
+#graphic-premiere,
+#graphic-words {
+  font-size: 11px;
+  font-weight: bold;
+  color: rgba(155, 133, 135, 0.33);
+  overflow: hidden;
+  font-weight: 400;
+  text-align: justify;
+  width: calc(100vw - 20px) !important;
+  margin: 0 auto;
+  left: 10px;
+}
+
+#graphic-timeline,
+#graphic-books,
+#graphic-chords,
+#graphic-heatmap,
+#graphic-steam {
+  max-width: 800px;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#graphic-timeline {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.transcript {
+  transition: all 1s;
+}
+
+.colored {
+  .transcript {
+    color: rgba($background, 0.5);
+
+    &.SAM {
+      background-color: rgba($SAM, 0.96);
+    }
+
+    &.ASHLEY {
+      background-color: rgba($ASHLEY, 0.96);
+    }
+
+    &.TRAVIS {
+      background-color: rgba($TRAVIS, 0.96);
+    }
+
+    &.LAURA {
+      background-color: rgba($LAURA, 0.96);
+    }
+
+    &.MARISHA {
+      background-color: rgba($MARISHA, 0.96);
+    }
+
+    &.LIAM {
+      background-color: rgba($LIAM, 0.66);
+    }
+
+    &.TALIESIN {
+      background-color: rgba($TALIESIN, 0.66);
+    }
+
+    &.MATT {
+      background-color: rgba($MATT, 0.66);
+    }
+
+    &.OTHER {
+      background-color: rgba($text_main, 0.33);
+    }
+  }
+}

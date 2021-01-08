@@ -1,0 +1,59 @@
+<!--removeIf(pymframe)-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>criticalwords-essay</title>
+  <link rel="icon" type="image/png" href="">
+
+  <!--removeIf(tmp)-->
+
+  <!--endRemoveIf(tmp)-->
+</head>
+
+<body>
+  <!--endRemoveIf(pymframe)-->
+
+  {% include "partials/stylesheets.html" %}
+  <!--removeIf(tmp)-->
+
+  <style>
+    body,
+    html {
+      width: auto;
+      height: auto;
+      /*display: inline-block;*/
+    }
+  </style>
+  <!--endRemoveIf(tmp)-->
+
+
+  <!--build:css styles.min.css-->
+  <link rel="stylesheet" href="css/styles.css">
+  <!--endbuild-->
+
+  <!--removeIf(production)-->
+  <div class="graphicWrapper">
+
+  <!--endRemoveIf(production)-->
+
+  {% include "main-body.html" ignore missing %} {% include "partials/script-links.html" %}
+
+  <!--removeIf(production)-->
+
+
+  </div>
+
+  <!--endRemoveIf(production)-->
+
+  <!--build:js main.min.js -->
+  <script src="js/main.js"></script>
+  <!-- endbuild -->
+
+  <!--removeIf(pymframe)-->
+</body>
+
+</html>
+<!--endRemoveIf(pymframe)-->

@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$SAM: #AAF683;
+$ASHLEY: #eedab9;
+$TRAVIS: #6A968A;
+$LAURA: #659cc8;
+$MARISHA: #dda032;
+$LIAM: #ec4e2a;
+$TALIESIN: #B3679B;
+$MATT: #FCFCFC;
+$background: #343334;
+$text_main: #efeae1;
+
+%noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+@mixin desktop {
+  @media only screen and (max-width: 1000px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media only screen and (max-width: 720px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin BS-large {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin BS-medium {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+@mixin BS-small {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+@mixin box-shadow($args...) {
+  -webkit-box-shadow: $args;
+  -moz-box-shadow: $args;
+  box-shadow: $args;
+}
+@mixin display-flex {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex-wrap($flex...) {
+  -webkit-flex-wrap: $flex;
+  -ms-flex-wrap: $flex;
+  flex-wrap: $flex;
+}
+@mixin justify-content($flex...) {
+  -webkit-justify-content: $flex;
+  -ms-flex-pack: $flex;
+  justify-content: $flex;
+}
+@mixin align-content($flex...) {
+  -webkit-align-content: $flex;
+  -ms-flex-line-pack: $flex;
+  align-content: $flex;
+}
+@mixin order($flex...) {
+  -webkit-order: $flex;
+  -ms-flex-order: $flex;
+  order: $flex;
+}
+@mixin flex($flex...) {
+  -webkit-flex: $flex;
+  -ms-flex: $flex;
+  flex: $flex;
+}
+@mixin align-self($flex...) {
+  -webkit-align-self: $flex;
+  -ms-flex-item-align: $flex;
+  align-self: $flex;
+}
+@mixin animation($args...) {
+  -webkit-animation: $args;
+  -moz-animation: $args;
+  -o-animation: $args;
+  animation: $args;
+}
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+%clearfix {
+  &:after,
+  &:before {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+%pagelink a {
+  cursor: pointer;
+  color: #0061A2;
+  box-shadow: inset -2px -5px 0 -2px #d5eeff;
+  @include transition(box-shadow 0.3s cubic-bezier(0.86, 0, 0.07, 1));
+}
+
+%pagelink a:hover {
+  box-shadow: inset -2px -20px 0 -3px #d5eeff;
+  text-decoration: none;
+}
