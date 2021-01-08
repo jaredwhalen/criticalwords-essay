@@ -40,7 +40,7 @@ export default function steam(Stepper, target) {
         .attr("class", "axisLabels")
         .attr("transform", "translate(0," + height * 0.2 + ")")
         .call(d3.axisTop(x)
-          .tickFormat(d => d == 1 ? 'Episode #1' : '#' + d)
+          .tickFormat(d => d == 1 ? 'Episode #1' : 'Ep. #' + d)
           .tickSize(-height * 0.6)
           .tickValues([1, 25, 50, 75, 100]))
         .select(".domain")
@@ -81,9 +81,19 @@ export default function steam(Stepper, target) {
         .attr("opacity", 0.75)
         .style("fill", function(d) { return colors[d.key]; })
         .attr("d", area)
-      // .on("mouseover", mouseover)
-      // .on("mousemove", mousemove)
-      // .on("mouseleave", mouseleave)
+
+
+      svg
+        .append('g')
+        .attr('class', 'text')
+        .append("text")
+        .attr('x', x(60))
+        .attr('y', margin.top)
+        .attr('fill', colors.text_main)
+        .attr('text-anchor', 'middle')
+        .attr('font-size', '12px')
+        .attr('class', 'CRText')
+        .text('Campaign 2')
 
 
 }
