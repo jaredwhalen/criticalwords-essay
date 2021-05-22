@@ -8,7 +8,7 @@ export default function setDimensions(Stepper) {
     windowHeight: window.innerHeight
   }
 
-  dimensions.height = dimensions.windowHeight * 0.6
+  dimensions.height = dimensions.windowHeight * 0.5
 
 
   // dimensions.height = document.querySelector('.slide.active') ? dimensions.windowHeight - document.querySelector('.slide.active').offsetHeight : dimensions.windowHeight * 0.9
