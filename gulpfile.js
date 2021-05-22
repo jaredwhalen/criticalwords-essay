@@ -110,3 +110,5 @@ gulp.task('buildtool', function(callback) {
         'sass-build', 'nunjucks-build'
     ], 'useref-build2', 'inline', 'buildtoolclean', callback)
 })
+
+gulp.task('archie', getTask('archie'));

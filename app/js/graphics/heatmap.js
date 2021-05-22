@@ -15,7 +15,7 @@ export default function heatmap(Stepper, target) {
     }
   } = Stepper
 
-  
+
   const lines = JSON.parse(require('../../data/lines_bool.json'))
 
   const shuffled = lines.sort(() => 0.5 - Math.random())
@@ -41,7 +41,7 @@ export default function heatmap(Stepper, target) {
 
     d.data.forEach((b, i) => {
       context.beginPath();
-      context.rect(margin.left + scale(i), vBase + (rowSpacer * r), (width / d.data.length), 40);
+      context.rect((margin.left - 5) + scale(i), vBase + (rowSpacer * r), (width / d.data.length), 40);
       context.fillStyle = b ? colors.TRAVIS : colors.MATT;
       context.fill();
       context.closePath();

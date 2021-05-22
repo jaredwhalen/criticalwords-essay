@@ -1,6 +1,8 @@
 import * as d3 from "d3";
 // util
 import scrollTo from './scrollTo.js'
+// import setDimensions from "./setDimensions"
+
 
 // graphics
 import words from '../graphics/words.js'
@@ -9,13 +11,14 @@ import chords from '../graphics/chords.js'
 export default function draw(Stepper) {
   d3.selectAll('.graphic').classed('is-visible', false)
 
+  // Stepper.dimensions = setDimensions(Stepper)
+
   const resetInterval = () => {
     Stepper.interval && clearInterval(Stepper.interval)
     Stepper.interval = undefined
     window.scrollTo({
       top: 0,
-      left: 0,
-      behavior: 'smooth'
+      left: 0
     });
   }
   let el;
@@ -50,6 +53,10 @@ export default function draw(Stepper) {
       d3.select('#graphic-heatmap').attr('class', 'graphic is-visible')
       break;
     case 9:
+      if (Stepper.episodeChoice) {
+        Stepper.episodeLimit = undefined
+        Stepper.episodeChoice = undefined
+      }
       resetInterval()
       break;
     case 10:
@@ -61,25 +68,23 @@ export default function draw(Stepper) {
     case 11:
       el = d3.select('#graphic-words')
       el.attr('class', 'graphic is-visible colored')
-      el
-        .transition()
-        .duration(1000)
-        .style('transform', 'scale(1)')
-      if (!Stepper.interval) Stepper.interval = scrollTo(Stepper.stepper_graphic.offsetHeight)
+
       break;
     case 12:
-      resetInterval()
+      if (!Stepper.interval) Stepper.interval = scrollTo(Stepper.stepper_graphic.offsetHeight)
+      // resetInterval()
       el = d3.select('#graphic-words')
       el.attr('class', 'graphic is-visible colored')
-      let scale = Stepper.dimensions.windowHeight / Number(el.style("height").slice(0, -2))
-      el
-        .transition()
-        .duration(1000)
-        .style('transform', `scale(${scale})`)
+
       break;
     case 13:
+      // Stepper.interval = scrollTo(Stepper.stepper_graphic.offsetHeight)
+      resetInterval()
       d3.select('#graphic-chords').attr('class', 'graphic is-visible')
       break;
+    case 14:
+
+
     default:
       // code block
   }

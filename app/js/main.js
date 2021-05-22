@@ -4,6 +4,7 @@ import episodeSelect from "./functions/episodeSelect"
 import makeGraphics from "./functions/makeGraphics"
 import setActive from "./functions/setActive"
 import setDimensions from "./functions/setDimensions"
+import hideTextOnPress from "./functions/hideTextOnPress"
 
 
 const Stepper = {
@@ -16,8 +17,8 @@ const Stepper = {
 }
 
 function init() {
-      makeCard(Stepper)
       Stepper.dimensions = setDimensions(Stepper)
+      makeCard(Stepper)
       makeGraphics(Stepper)
       Stepper.index = 0;
       setActive(Stepper)
@@ -56,6 +57,10 @@ document.onkeydown = function(event) {
         break;
     }
 };
+
+// hideTextOnPress()
+
+
 
 for (var i = 0; i < regions.length; i++) {
   regions[i].addEventListener('click', touchHandler, false);

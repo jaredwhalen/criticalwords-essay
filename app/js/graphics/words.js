@@ -18,11 +18,15 @@ export default function words(Stepper, target) {
 
     let random = Math.floor(Math.random() * Stepper.episodeLimit) + 1
 
-    fetch(`https://criticalwordsmongoose.herokuapp.com/api/episodes/e${random}`)
+    let ep = Stepper.episodeChoice ? Stepper.episodeChoice : random
+
+
+    fetch(`https://criticalwordsmongoose.herokuapp.com/api/episodes/e${ep}`)
       .then((response) => {
         return response.json()
       })
       .then((data) => {
+
         Stepper.episodeText = data
 
         d3.select(target)
@@ -33,7 +37,7 @@ export default function words(Stepper, target) {
         .attr('class', d => `transcript ${d.speaker}`)
         .html(d => d.text)
 
-        let randomEpisode = Stepper.episodes.filter(d => d.episode_number == random)[0]
+        let randomEpisode = Stepper.episodes.filter(d => d.episode_number == ep)[0]
 
         document.querySelector('#random-episode').innerHTML = `Let's go with <em>${randomEpisode.episode_number}) "${randomEpisode.episode_title}"</em>`
 

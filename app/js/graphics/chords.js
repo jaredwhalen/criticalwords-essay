@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-
+import titleCase from "../functions/titleCase"
 // functions
 const makeMatrix = (data, names) => {
   const index = new Map(names.map((name, i) => [name, i]));
@@ -21,9 +21,11 @@ export default function chords(Stepper, target) {
       height,
       width,
       graphicHeight,
-      margin
+      margin,
+      device
     }
   } = Stepper
+
 
   // clone the episode text and remove any incidents of OTHER
   let lines = JSON.parse(JSON.stringify(Stepper.episodeText.data))
@@ -65,7 +67,8 @@ var wrapper = svg
 .attr("transform",
   "translate(" + (width + margin.left + margin.right) / 2 + "," + (height + margin.top + margin.bottom) / 2 + ")");
 
-  var innerRadius = Math.min(width, height) * .39
+
+  var innerRadius = Math.min(width, height) * .35
   var outerRadius = innerRadius * 1.1;
 
     var opacity = [1, 1, 0.3, 1, 1, 1]
@@ -180,14 +183,14 @@ var wrapper = svg
           + "translate(" + (outerRadius + 10) + ")"
           + (d.angle > Math.PI ? "rotate(180)" : "");
         })
-        .text(function(d,i){ return names[i]; })
-        .style("font-size", "15px")
+        .text(function(d,i){ return titleCase(names[i]); })
+        .style("font-size", "12px")
         .attr("fill", (d, i) => colors[names[i]])
 
         wrapper
           .append("text")
           .attr('x', 0)
-          .attr('y', (height / -2) - 15)
+          .attr('y', (height / -2) - 20)
           .attr('fill', colors.text_main)
           .attr('text-anchor', 'middle')
           .attr('font-size', '12px')

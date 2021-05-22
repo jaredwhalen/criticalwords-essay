@@ -1,4 +1,5 @@
 import * as d3 from "d3";
+import titleCase from "../functions/titleCase"
 
 export default function steam(Stepper, target) {
 
@@ -8,6 +9,7 @@ export default function steam(Stepper, target) {
 
   let colors = require('../../data/colors.json')
 
+
     var legened = d3.select(target)
     .append('div')
     .attr('class', 'flex-legend')
@@ -16,7 +18,7 @@ export default function steam(Stepper, target) {
     .enter()
     .append('div')
     .attr('class', d => `flex-legend-item ${d}`)
-    .html(d => `<div class='flex-legend-item-square'></div> ${d}`)
+    .html(d => `<div class='flex-legend-item-square'></div> ${titleCase(d)}`)
 
   // append the svg object to the body of the page
   var svg = d3.select(target)
@@ -73,7 +75,7 @@ export default function steam(Stepper, target) {
 
       // Show the areas
       svg
-        .selectAll("mylayers")
+        .selectAll("areas")
         .data(stackedData)
         .enter()
         .append("path")

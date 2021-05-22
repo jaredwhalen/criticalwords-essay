@@ -29,6 +29,7 @@ export default function wrap(text, width) {
                             .attr("dy", ++lineNumber * lineHeight + dy + "em")
                             .text(word);
             }
+            
         }
     });
 }

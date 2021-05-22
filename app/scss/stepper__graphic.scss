@@ -79,12 +79,16 @@ div {
 
 .flex-legend {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+
+
 
   .flex-legend-item {
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 12px;
+    margin: 0px 15px 5px;
 
     .flex-legend-item-square {
       width: 10px;
@@ -119,6 +123,20 @@ div {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @include tablet {
+    top: 30%;
+  }
+}
+
+#graphic-steam, #graphic-chords {
+  @include tablet {
+    top: 40%;
+  }
+}
+
+#graphic-chords {
+  text-align: center;
 }
 
 #graphic-timeline {

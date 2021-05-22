@@ -5,7 +5,6 @@ let colors = require('../../data/colors.json')
 
 export default function books(Stepper, target) {
 
-
   let {dimensions: {height, width, margin}} = Stepper
 
   var svg = d3.select(target)
@@ -19,8 +18,8 @@ export default function books(Stepper, target) {
   const CRWordCount = 3804415
   const bookJson = require('../../data/books.json')
 
-  let slide13Text = document.querySelector('.slide[data-id="14"]').querySelectorAll('.p-inner')[1]
-  slide13Text.innerHTML = slide13Text.innerHTML.replace('{{showLength}}', `${CRWordCount.toLocaleString()} words`)
+  let slide15Text = document.querySelector('.slide[data-id="15"]').querySelectorAll('.p-inner')[1]
+  slide15Text.innerHTML = slide15Text.innerHTML.replace('{{showLength}}', `${CRWordCount.toLocaleString()} words`)
 
 
   var x = d3.scaleLinear()
@@ -73,13 +72,14 @@ export default function books(Stepper, target) {
     .attr('font-size', '12px')
     .attr('class', 'bookText')
     .text(d => d.series)
-    .call(wrap, 100);
+    .call(wrap, 100)
+
 
 
   svg
     .append('g')
     .attr('class', 'text')
-    .selectAll("bookText")
+    .selectAll("bookCountLabel")
     .data(bookJson)
     .enter()
     .append("text")
@@ -89,8 +89,8 @@ export default function books(Stepper, target) {
     .attr('text-anchor', 'middle')
     .attr('font-size', '14px')
     .attr('font-weight', 700)
-    .attr('class', 'bookText')
-    .text(d => d.words.toLocaleString())
+    .attr('class', 'bookCountLabel')
+    .text(d => Stepper.dimensions.device === 'desktop' ? d.words.toLocaleString() : d3.format(".0s")(d.words))
 
 
   svg

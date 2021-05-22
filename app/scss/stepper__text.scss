@@ -15,8 +15,7 @@
     opacity: 0;
     transition: opacity 0.15s;
     @include mobile {
-      padding: 0 25px;
-      padding-bottom: 70px;
+      padding: 0 25px 70px;
     }
 
     &.active {
@@ -38,8 +37,33 @@
       font-weight: 400;
       line-height: 1.7;
       font-size: 20px;
+      transition: all 0.25s ease-out;
+      max-height: 50vh;
+
+      &.hideTextToggle {
+        font-size: 18px;
+        line-height: 0;
+        margin-bottom: 0px;
+
+        span {
+          padding: 10px 15px !important;
+          i {
+            // padding: 0px 15px;
+            transition: all 0.25s ease-out;
+            &.flip {
+              transform: rotate(-180deg);
+            }
+          }
+        }
+      }
+
+      &.hidden {
+        opacity: 0;
+        max-height: 0px;
+      }
+
       @include mobile {
-        font-size: 14px;
+        font-size: 16px;
       }
 
       span.p-inner {
@@ -53,7 +77,6 @@
           -webkit-box-shadow: -6px 0 0 0 $text_main, 6px 0 0 0 $text_main;
           box-shadow: -6px 0 0 0 $text_main, 6px 0 0 0 $text_main;
           padding: 1.5px 5px;
-
           // white-space: nowrap;
           &.MATT {
             background-color: rgba(#b6b5b6, 1);
@@ -66,7 +89,8 @@
             transition: all 0.15s;
             padding: 1.5px 0;
 
-            &:hover, &:active {
+            &:active,
+            &:hover {
               background-color: inherit;
               color: inherit;
             }
@@ -77,7 +101,6 @@
             background-color: inherit;
             color: inherit;
             padding: 1.5px 0;
-
 
             .keyboard {
               display: inline-block;
@@ -204,6 +227,11 @@
 
 .select-wrapper {
   position: relative;
+
+  select {
+    -webkit-appearance: none;
+    width: fit-content !important;
+  }
 }
 
 .select-wrapper::after {
@@ -223,7 +251,8 @@
   opacity: 0;
 }
 
-#episodes {
+#episodes-choice,
+#episodes-random {
   display: inline;
   // A reset of styles, including removing the default dropdown arrow
   appearance: none;
@@ -237,4 +266,8 @@
   outline: none;
   // font-weight: 600;
   font-style: italic;
+}
+
+.bookCountLabel:last-of-type {
+  display: none;
 }
