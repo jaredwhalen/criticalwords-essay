@@ -23,9 +23,9 @@ export default function timeline(Stepper, target) {
     maxdate = new Date().addHours(showDuration);
 
   var mL = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-  let slide2Text = document.querySelector('.slide[data-id="3"]').querySelector('.p-inner')
+  let slide2Text = document.querySelector('.slide[data-id="3"]').querySelector('.p-inner.text')
   slide2Text.innerHTML = slide2Text.innerHTML.replace('{{caughtUpDate}}', `${mL[maxdate.getMonth()]} ${maxdate.getDate()}`)
-
+  console.log(slide2Text.innerHTML)
 
   var getDaysArray = function(start, end) {
     for (var arr = [], dt = new Date(start); dt <= end; dt.setDate(dt.getDate() + 1)) {

@@ -28,7 +28,7 @@ export default function makeCard(Stepper) {
     slide.className += `slide${item.type ? ' ' + item.type : ''}`
     slide.style.alignSelf = item.alignSelf ? item.alignSelf : 'center'
     if (Stepper.dimensions.device === "mobile" && item.alignSelf) slide.innerHTML = '<p class="hideTextToggle"><span class="p-inner"><i class="fas fa-chevron-down"></i></span></p>'
-    slide.innerHTML += item.text.split('\n').map(d => `<p class="text"><span class='p-inner'>${d}</span></p>`).join('')
+    slide.innerHTML += item.text.split('\n').map(d => `<p class="text"><span class='p-inner text'>${d}</span></p>`).join('')
     stepper_text.append(slide)
 
   }).join(' ')
