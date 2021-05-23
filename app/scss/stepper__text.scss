@@ -30,6 +30,30 @@
       }
     }
 
+
+    .hideTextToggle {
+      font-size: 18px;
+      line-height: 0;
+      margin-bottom: 0px;
+      padding: 10px 15px !important;
+      background-color: $text_main;
+      -webkit-box-shadow: -6px 0 0 0 $text_main, 6px 0 0 0 $text_main;
+      box-shadow: -6px 0 0 0 $text_main, 6px 0 0 0 $text_main;
+      display: inline;
+      pointer-events: all;
+
+
+        i {
+pointer-events: none;
+          // padding: 0px 15px;
+          transition: all 0.25s ease-out;
+          &.flip {
+            transform: rotate(-180deg);
+          }
+        }
+
+    }
+
     p {
       max-width: 50rem;
       // margin: 1rem auto;
@@ -40,22 +64,7 @@
       transition: all 0.25s ease-out;
       max-height: 50vh;
 
-      &.hideTextToggle {
-        font-size: 18px;
-        line-height: 0;
-        margin-bottom: 0px;
 
-        span {
-          padding: 10px 15px !important;
-          i {
-            // padding: 0px 15px;
-            transition: all 0.25s ease-out;
-            &.flip {
-              transform: rotate(-180deg);
-            }
-          }
-        }
-      }
 
       &.hidden {
         opacity: 0;
@@ -66,7 +75,7 @@
         font-size: 16px;
       }
 
-      span.p-inner {
+      .p-inner {
         background-color: $text_main;
         -webkit-box-shadow: -6px 0 0 0 $text_main, 6px 0 0 0 $text_main;
         box-shadow: -6px 0 0 0 $text_main, 6px 0 0 0 $text_main;
@@ -162,7 +171,7 @@
     &.methodology,
     &.title {
       p {
-        span.p-inner {
+        .p-inner {
           background-color: transparent !important;
           -webkit-box-shadow: none !important;
           box-shadow: none !important;
@@ -195,7 +204,7 @@
         line-height: normal;
         font-size: 16px;
 
-        span.p-inner {
+        .p-inner {
           svg {
             margin-bottom: 15px;
             @include tablet {

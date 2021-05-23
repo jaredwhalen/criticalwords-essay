@@ -27,16 +27,18 @@ export default function makeCard(Stepper) {
     slide.setAttribute("data-id", i)
     slide.className += `slide${item.type ? ' ' + item.type : ''}`
     slide.style.alignSelf = item.alignSelf ? item.alignSelf : 'center'
-    if (Stepper.dimensions.device === "mobile" && item.alignSelf) slide.innerHTML = '<p class="hideTextToggle"><span class="p-inner"><i class="fas fa-chevron-down"></i></span></p>'
+    if (Stepper.dimensions.device === "mobile" && item.alignSelf) slide.innerHTML = '<div class="hideTextToggle"><i class="fas fa-chevron-down"></i></div>'
     slide.innerHTML += item.text.split('\n').map(d => `<p class="text"><span class='p-inner text'>${d}</span></p>`).join('')
     stepper_text.append(slide)
 
   }).join(' ')
 
+
   document.querySelectorAll('.hideTextToggle').forEach(item => {
     item.addEventListener('click', event => {
-      event.target.closest("i").classList.toggle("flip")
-      event.target.closest(".slide.active").querySelector("p.text").classList.toggle("hidden")
+      event.preventDefault()
+      event.target.parentElement.querySelector("i").classList.toggle("flip")
+      event.target.parentElement.querySelector("p.text").classList.toggle("hidden")
     })
   })
 
