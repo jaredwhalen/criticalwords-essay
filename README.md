@@ -14,7 +14,7 @@ The episode transcriptions are stored in a MongoDB Atlas database and accessed v
 
 
 # Methodology
-The transcription data for this story was scraped from the [Critical Role Wiki](https://jaredwhalen.github.io/criticalwords-essay/%E2%80%99https://criticalrole.fandom.com/wiki/Transcripts%E2%80%99). I grouped all non-core cast members and multi-person lines as ‘other’ and standardized the names used. I only included dialogue from after the opening theme.
+The transcription data for this story was scraped from the [Critical Role Wiki](https://criticalrole.fandom.com/wiki/Transcripts). I grouped all non-core cast members and multi-person lines as ‘other’ and standardized the names used. I only included dialogue from after the opening theme.
 
 # Credits:
 
