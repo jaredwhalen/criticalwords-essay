@@ -82,13 +82,11 @@ div {
   justify-content: center;
   flex-wrap: wrap;
 
-
-
   .flex-legend-item {
     display: flex;
     align-items: center;
     font-size: 12px;
-    margin: 0px 15px 5px;
+    margin: 0 15px 5px;
 
     .flex-legend-item-square {
       width: 10px;
@@ -113,23 +111,49 @@ div {
   left: 10px;
 }
 
-#graphic-timeline,
+#graphic-words {
+  .flex-legend {
+    border-radius: 2px;
+    position: fixed;
+    top: 50px;
+    z-index: 999;
+    background: $background;
+    padding: 10px 0 5px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    opacity: 0;
+    transition: opacity 0.25s;
+    @include mobile {
+      max-width: 260px;
+    }
+  }
+
+  &.colored {
+    .flex-legend {
+      opacity: 1;
+    }
+  }
+}
+
 #graphic-books,
 #graphic-chords,
 #graphic-heatmap,
-#graphic-steam {
+#graphic-steam,
+#graphic-timeline {
   max-width: 800px;
   margin: 0 auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   @include tablet {
     top: 30%;
   }
 }
 
-#graphic-steam, #graphic-chords {
+#graphic-chords,
+#graphic-steam {
   @include tablet {
     top: 40%;
   }
@@ -143,7 +167,6 @@ div {
   display: flex;
   justify-content: space-around;
 }
-
 
 .transcript {
   transition: all 1s;

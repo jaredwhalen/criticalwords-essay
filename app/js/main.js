@@ -20,7 +20,7 @@ function init() {
       Stepper.dimensions = setDimensions(Stepper)
       makeCard(Stepper)
       makeGraphics(Stepper)
-      Stepper.index = 0;
+      Stepper.index = 9;
       setActive(Stepper)
       Stepper.count = document.querySelectorAll(".slide").length
       progressBar(Stepper.index, 0)

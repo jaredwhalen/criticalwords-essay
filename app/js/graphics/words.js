@@ -1,4 +1,5 @@
 import * as d3 from "d3";
+import titleCase from "../functions/titleCase"
 
 // callback
 import chords from '../graphics/chords.js'
@@ -43,6 +44,25 @@ export default function words(Stepper, target) {
 
         chords(Stepper, '#graphic-chords')
       })
+
+
+
+
+
+
+      var keys = ["ASHLEY", "TALIESIN", "MARISHA", "TRAVIS", "SAM", "LIAM", "LAURA", "MATT"]
+
+        var legened = d3.select(target)
+        .append('div')
+        .attr('class', 'flex-legend')
+        .selectAll('.flex-legend-item')
+        .data(keys.reverse())
+        .enter()
+        .append('div')
+        .attr('class', d => `flex-legend-item ${d}`)
+        .html(d => `<div class='flex-legend-item-square'></div> ${titleCase(d)}`)
+
+
 
 
   }
