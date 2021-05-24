@@ -29,8 +29,7 @@ export default function steam(Stepper, target) {
     .attr("transform",
       "translate(" + margin.left + "," + margin.top + ")");
 
-      let data = require('../../data/words_per_player.json')
-
+      let data = JSON.parse(require('../../data/words_per_player.json'))
     // Add X axis
       var x = d3.scaleLinear()
         .domain(d3.extent(data, function(d) {
