@@ -51,6 +51,7 @@ document.onkeydown = function(event) {
         progressBar(Stepper.index, Stepper.count)
         break;
       case 39:
+        if (navigator.userAgent.search) console.log('firefox')
         Stepper.index < Stepper.count - 1 && Stepper.index++
         setActive(Stepper)
         progressBar(Stepper.index, Stepper.count)

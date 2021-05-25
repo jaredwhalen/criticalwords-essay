@@ -41,6 +41,7 @@ export default function episodeSelect(Stepper) {
     Stepper.episodeChoice = undefined
     document.querySelector('#random-episode').innerHTML = '<em>Rolling dice…</em>'
     document.body.removeChild(dummySelect);
+    document.activeElement.blur()
   });
 
   selectRandom.dispatchEvent(new Event('change'));
@@ -60,6 +61,7 @@ export default function episodeSelect(Stepper) {
     Stepper.index = 10;
     setActive(Stepper)
     progressBar(Stepper.index, Stepper.count)
+    document.activeElement.blur()
   });
 
   selectRandom.dispatchEvent(new Event('change'));
